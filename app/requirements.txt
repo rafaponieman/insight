@@ -1,0 +1,13 @@
+django==4.2.6
+docopt==0.6.2
+psycopg==3.1.12
+psycopg-binary==3.1.12
+yarg==0.1.9
+# asgiref==3.7.2 # Installed as dependency for django
+# certifi==2023.7.22 # Installed as dependency for requests
+# charset-normalizer==3.3.1 # Installed as dependency for requests
+# idna==3.4 # Installed as dependency for requests
+# requests==2.31.0 # Installed as dependency for yarg
+# sqlparse==0.4.4 # Installed as dependency for django
+# typing-extensions==4.8.0 # Installed as dependency for psycopg
+# urllib3==2.0.7 # Installed as dependency for requests
