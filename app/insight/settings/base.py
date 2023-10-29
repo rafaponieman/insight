@@ -43,6 +43,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
+    'insight',
+    'data',
     'seekers'
 ]
 

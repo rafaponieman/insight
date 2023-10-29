@@ -1,3 +1,5 @@
+DEBUG = True
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -11,4 +13,6 @@ DATABASES = {
 
 SECRET_KEY = 'django-insecure--#su&#ch=(ar6wx8waw)^-lpo*^e%3@wef+c9p!_2th3^@!6bn'
 
-DEBUG = True
+TIME_ZONE = 'UTC'
+
+CHAINBASE_API_KEY=''
