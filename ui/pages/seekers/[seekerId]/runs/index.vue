@@ -15,11 +15,7 @@
       :columns="columns"
       :data="listingData"
       :additional="additional"
-    >
-      <template v-slot:custom-column>
-        <div>pepe</div>
-      </template>
-    </listing>
+    />
   </section>
 </template>
 
@@ -30,17 +26,17 @@
   const seekerId = route.params.seekerId
 
   const { data: listingData } = await useFetch(`${config.public.apiRoot}/runs/?seeker=${seekerId}`)
-  console.log(listingData)
 
   const columns = [
     { name: 'id', label: 'ID' },
     { name : 'status', label: 'Status'},
     { name : 'start', label: 'Start'},
     { name : 'end', label: 'End'},
-    { name: 'created', label: 'Created', type: 'date' }
+    { name: 'created', label: 'Created', type: 'date' },
+    { name: 'actions', label: '', type: 'additional' }
   ]
 
   const additional = [
-    { label: '3', linkData: (seeker) => ({ to: `/seekers/${seeker.id}/runs`, label: 'View runs'}) }
+    { label: '3', linkData: (run) => run.status === 'completed' ? { to: `/seekers/${seekerId}/runs/${run.id}`, label: 'View results'} : '' }
   ]
 </script>

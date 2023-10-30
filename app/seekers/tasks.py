@@ -1,3 +1,5 @@
+from django.utils import timezone
+
 from celery.app import shared_task
 
 from seekers.contrib.test_seeker import TestSeekerPrototype
@@ -11,6 +13,7 @@ def initiate_run(data):
     run = Run.objects.get(id=run_id)
 
     run.status = Run.STATUSES['IN_PROGRESS']
+    run.start = timezone.now()
     run.save()
 
     seeker_prototype = None
@@ -30,4 +33,5 @@ def initiate_run(data):
     print('post')
 
     run.status = Run.STATUSES['COMPLETED']
+    run.end = timezone.now()
     run.save()

@@ -5,14 +5,28 @@
       <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
         <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
             <FormKit action="#" type="form" @submit="initiateRun" :disabled="loading">
-              <div class="">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                <FormKit
-                  type="text"
-                  name="name"
-                  id="name"
-                />
-              </div>
+              <FormKit
+                type="text"
+                name="name"
+                id="name"
+                label="Name"
+              />
+              <FormKit
+                type="number"
+                name="from_timestamp"
+                id="from_timestamp"
+                min="0"
+                step="1"
+                label="From timestamp"
+              />
+              <FormKit
+                type="number"
+                name="to_timestamp"
+                id="to_timestamp"
+                min="0"
+                step="1"
+                label="To timestamp"
+              />
             </FormKit>
         </div>
       </div>

@@ -37,6 +37,8 @@ class Run(AbstractBaseModel):
     )
 
     name = models.CharField('name', max_length=150, blank=True)
+    from_timestamp = models.BigIntegerField()
+    to_timestamp = models.BigIntegerField()
     seeker = models.ForeignKey(Seeker, on_delete=models.PROTECT)
     start = models.DateTimeField('run start', blank=True, null=True)
     end = models.DateTimeField('run end', blank=True, null=True)
