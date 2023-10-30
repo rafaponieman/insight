@@ -17,6 +17,9 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@formkit/icons": "^1.2.2",
+    "@formkit/nuxt": "^1.2.2",
+    "@formkit/themes": "^1.2.2",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@pinia/nuxt": "^0.5.1",
     "flowbite": "^2.0.0"

@@ -4,9 +4,9 @@
       <div class="flex justify-start items-center">
         <NuxtLink to="/" class="flex items-center justify-between mr-4">
           <img
-            src="https://flowbite.s3.amazonaws.com/logo.svg"
+            src="/insight.svg"
             class="mr-3 h-8"
-            alt="Flowbite Logo"
+            alt="insight"
           />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Insight</span>
         </NuxtLink>

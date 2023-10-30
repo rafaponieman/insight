@@ -8,6 +8,9 @@ SECRET_KEY = 'dev-unsafe-943a9ae36ba3aac56e9e8fb5fc999d4a226f0416ef009b65076e8f0
 
 ALLOWED_HOSTS = ['*']
 
+# WARNING: do not enable in production
+CORS_ALLOW_ALL_ORIGINS = True
+
 try:
     from .local import *  # pylint: disable=wildcard-import
 except ImportError:

@@ -5,6 +5,9 @@ from insight.models import AbstractBaseModel
 class Token(AbstractBaseModel):
     symbol = models.CharField('symbol', max_length=100)
 
+    def __str__(self):
+        return self.symbol
+
     class Meta:
         verbose_name = 'token'
         verbose_name_plural = 'tokens'
@@ -14,6 +17,9 @@ class Pair(AbstractBaseModel):
     pool_id = models.CharField('pool id (address)', max_length=255)
     token_1 = models.ForeignKey(Token, on_delete=models.PROTECT, related_name='pairs_token_1')
     token_2 = models.ForeignKey(Token, on_delete=models.PROTECT, related_name='pairs_token_2')
+
+    def __str__(self):
+        return f'{self.token_1.symbol} - {self.token_2.symbol}'
 
     class Meta:
         verbose_name  = 'pair'

@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
-from seekers.viewsets import SeekerViewSet
+from seekers.viewsets import RunViewSet, SeekerViewSet, TrainingViewSet
 
 router = DefaultRouter()
 
+router.register(r'runs', RunViewSet, basename='runs')
 router.register(r'seekers', SeekerViewSet, basename='seekers')
+router.register(r'trainings', TrainingViewSet, basename='trainings')
 
 urlpatterns = router.urls
 

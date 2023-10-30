@@ -12,7 +12,7 @@
       class: 'dark'
     },
     bodyAttrs: {
-      class: 'antialiased'
+      class: 'antialiased dark:bg-gray-900'
     }
   })
 </script>
