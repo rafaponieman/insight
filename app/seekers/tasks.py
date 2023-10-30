@@ -1,7 +1,9 @@
 from django.utils import timezone
 
 from celery.app import shared_task
+from data.providers import fetch_data
 
+from seekers.contrib.sma import SMASeekerPrototype
 from seekers.contrib.test_seeker import TestSeekerPrototype
 
 
@@ -18,19 +20,24 @@ def initiate_run(data):
 
     seeker_prototype = None
 
+    # Fetch Seeker prototype
     if run.seeker.prototype == 'test':
         seeker_prototype = TestSeekerPrototype
+    elif run.seeker.prototype == 'sma':
+        seeker_prototype = SMASeekerPrototype
     else:
         raise Exception(f'Unknown seeker prototype {run.seeker.prototype}')
 
     prototype = seeker_prototype()
-    print('pre')
+
+    # Fetch data
+    data = fetch_data(run.from_timestamp, run.to_timestamp)
+
     results = prototype.process()
 
     if 'events' in results:
         for event in results['events']:
             Event.objects.create(run=run, timestamp=event['timestamp'], message=event['message'])
-    print('post')
 
     run.status = Run.STATUSES['COMPLETED']
     run.end = timezone.now()

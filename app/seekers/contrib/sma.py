@@ -1,7 +1,7 @@
 import random
 import time
 
-class TestSeekerPrototype():
+class SMASeekerPrototype():
     def process(self):
         return {
             'events': [
