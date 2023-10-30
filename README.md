@@ -1,21 +1,21 @@
 # Insight
-Insight is a platform designed for retrospective and real-time analysis of blockchain data.
+Insight is a platform designed for retrospective and real-time analysis of blockchain data. Developed for Chainbase & Developer DAO hackathon.
 
 ## Key concepts
-Insight introduces the concept of *Seekers*: any program or orchestrated system that can be run on a dataset to produce insights. Seekers can implement ML algorithms, statistical analysis, or any other imaginable strategy.
+Insight introduces the concept of *Seekers*: any program or orchestrated system that can be run on a dataset to produce insights. *Seekers* can implement ML algorithms, statistical analysis, or any other imaginable strategy. *Seekers* can conduct *Runs*, in order to analyze data and produce results.
 
 ## Data source
-Seekers could consume blockchain data directly, by examining the blockchain directly. However, and would add an enormous effort to any implementation, and brings no added benefit. For this reason, Insight provides access to [Chainbase](https://chainbase.com/)'s data, which has already been gathered, extracted and transformed into an easily accessible format. Furthermore, in the future, *Seekers* will be able to consume live data as it is generated.
+*Seekers* could consume blockchain data by examining the blockchain directly. However, that would imply an enormous effort for any implementation, and would bring no added benefit. For this reason, Insight provides access to [Chainbase](https://chainbase.com/)'s data, which has already been gathered, extracted and transformed into an easily accessible format. Furthermore, in the future, *Seekers* will be able to consume live data as it is generated.
 
 ## Operation
-The current version provides a sample built in seeker, that doesn't generate any output.
+The current version provides a sample built in seeker, that simulates processing by introducing a 10 second delay, and doesn't generate any output.
 
-Using this seeker, retrospective *Runs* can be initiated, on a select portion of data. The current version specifically provides volume and price data for SushiSwap's LINK/WETH pool. It was chosen because it provides this data parameters in continuity from several years in the past to the present time.
+Using this seeker, retrospective *Runs* can be initiated, on a select portion of data. The current version specifically provides volume and price data for SushiSwap's LINK/WETH pool. It was chosen because it provides this data uninterruptedly for a meaningful amount of time.
 
 In the future, *Runs* would generate output *Events* along with a text log. Events would contain information associated with a timestamp, which will be visualized charted along with some of the source data on the completed Run's page.
 
 ## Proof of concept
-I developed this entire project by myself, in two days, which is all the time I had available. My goal was to reach the most basic proof of concept, which would have included an actual Seeker, which would, for example, calculate a Simple Moving Average for a dataset, and generate events from points in which the SMA is crossed. I knew that I would only get so far, but I still believed it was worth giving it a shot, and the current project, even though doesn't reach full proof of concept status, helped me investigate Chainbase's products, and think around a novel problem that presents a playground for creativity and experimentation.
+I developed this entire project by myself, in two days, which is all the time I had available. My goal was to reach the most basic proof of concept, which would have included a real *Seeker*, which could, for example, calculate a Simple Moving Average for a dataset, and generate events from points in which the SMA is crossed. Also, the output data would be presented in the frontend with a chart and an event list. If I had had even more time, I would have loved to implement a ML algorithm that would also involve adding *Training* capabilities to the platform.
 
 ## Technologies
 The application consists of four parts:
