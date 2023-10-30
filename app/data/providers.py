@@ -27,13 +27,16 @@ def fetch_slice(from_timestamp, to_timestamp, skip):
 def fetch_data(from_timestamp, to_timestamp):
     # Fetches data in batches to complete full timestamp range
     skip = 0
+    data = []
     
     while True:
         data_slice = fetch_slice(from_timestamp, to_timestamp, skip)
 
-        if (not data_slice or len(data_slice['liquidityPool']['hourlySnapshots']) == 0):
+        if (not data_slice or len(data_slice['liquidityPool']['dailySnapshots']) == 0):
             break
 
-        print('SKIP: ', skip)
-        print(data_slice)
+        data.append(data_slice['liquidityPool']['dailySnapshots'])
+
         skip += 100
+
+    return data

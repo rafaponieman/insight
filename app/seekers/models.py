@@ -54,6 +54,7 @@ class Run(AbstractBaseModel):
 class Event(AbstractBaseModel):
     run = models.ForeignKey(Run, on_delete=models.CASCADE, related_name='events')
     timestamp = models.PositiveBigIntegerField('timestamp', db_index=True)
+    message = models.TextField('message', blank=True)
 
     class Meta:
         verbose_name = 'event'
@@ -89,4 +90,4 @@ def run_post_save(sender, instance, created, **kwargs):
     if created:
         initiate_run.delay({ 'run_id': instance.id })
 
-models.signals.post_save.connect(receiver=run_post_save)
+models.signals.post_save.connect(receiver=run_post_save, sender=Run)
