@@ -69,6 +69,7 @@ Additionally, SQLite was used for the main DB, and Redis to store the task queue
     ```
     celery -A insight worker -l INFO
     ```
+8. Access the internal admin interface at [http://localhost:8000/admin/](http://localhost:8000/admin/) and create at least one Seeker.
 
 Alternatively, the application can also be run without the need for Celery or Redis, running tasks synchronously by changing the CELERY_ALWAYS_EAGER setting in local.py to True.
 
@@ -79,10 +80,7 @@ Alternatively, the application can also be run without the need for Celery or Re
     NUXT_PUBLIC_API_ROOT=http://localhost:8000
     ```
 3. Start the development server with `yarn dev` or `npm run dev`
-Copy settings local
-Add Chainbase API key
-Runserver
-ALWAYS EAGER
+4. Access the frontend UI at [http://localhost:3000](http://localhost:3000)
 
 ## Future work
 - Insight would be an open source software platform that anyone can download and install in their system, or self-host.
